@@ -130,7 +130,7 @@ public class ProdutoDAO {
 		return produtos;
 	}
 	
-	private Produto popularProduto(ResultSet resultSet) throws SQLException {
+	private Produto popularProduto(final ResultSet resultSet) throws SQLException {
 		Produto produto = new Produto();
 
 		if (resultSet != null) {
