@@ -12,7 +12,7 @@ import br.com.pjr.exemplojsf.util.Conexao;
 
 public class ProdutoDAO {
 	
-	public void incluir(Produto produto) throws ClassNotFoundException, SQLException {
+	public void incluir(final Produto produto) throws ClassNotFoundException, SQLException {
 		
 		Connection connection = Conexao.obterConexao();
 		
@@ -33,7 +33,7 @@ public class ProdutoDAO {
 		
 	}
 	
-	public void alterar(Produto produto) throws ClassNotFoundException, SQLException {
+	public void alterar(final Produto produto) throws ClassNotFoundException, SQLException {
 		
 		Connection connection = Conexao.obterConexao();
 		
@@ -54,7 +54,7 @@ public class ProdutoDAO {
 		
 	}
 	
-	public void excluir(Produto produto) throws ClassNotFoundException, SQLException {
+	public void excluir(final Produto produto) throws ClassNotFoundException, SQLException {
 		
 		Connection connection = Conexao.obterConexao();
 		
@@ -74,7 +74,7 @@ public class ProdutoDAO {
 		}
 	}
 	
-	public Produto pesquisarPorId(Long id) throws ClassNotFoundException, SQLException {
+	public Produto pesquisarPorId(final Long id) throws ClassNotFoundException, SQLException {
 		
 		Connection connection = Conexao.obterConexao();
 		
