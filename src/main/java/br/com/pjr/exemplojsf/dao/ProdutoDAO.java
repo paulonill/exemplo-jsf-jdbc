@@ -16,7 +16,7 @@ public class ProdutoDAO {
 		
 		Connection connection = Conexao.obterConexao();
 		
-		final String sql = "INSERT INTO (nome, codigo, descricao, valor) VALUES (?,?,?,?)";
+		final String sql = "INSERT INTO produto (nome, codigo, descricao, valor) VALUES (?,?,?,?)";
 		
 		PreparedStatement preparedStatement = null;
 		
@@ -26,7 +26,7 @@ public class ProdutoDAO {
 			Conexao.executarSQL(preparedStatement, produto.getNome().trim(), produto.getCodigo().trim(), produto.getDescricao().trim(), produto.getValor());
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw new SQLException(e);
 		} finally {
 			Conexao.fecharConexao(preparedStatement, connection, null);
 		}
@@ -37,7 +37,7 @@ public class ProdutoDAO {
 		
 		Connection connection = Conexao.obterConexao();
 		
-		final String sql = "UPDATE produto SET nome = ?, codigio = ?, descricao = ?, valor = ? WHERE id = ?";
+		final String sql = "UPDATE produto SET nome = ?, codigo = ?, descricao = ?, valor = ? WHERE id = ?";
 		
 		PreparedStatement preparedStatement = null;
 		
@@ -47,7 +47,7 @@ public class ProdutoDAO {
 			Conexao.executarSQL(preparedStatement, produto.getNome().trim(), produto.getCodigo().trim(), produto.getDescricao().trim(), produto.getValor(), produto.getId());
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw new SQLException(e);
 		} finally {
 			Conexao.fecharConexao(preparedStatement, connection, null);
 		}
@@ -68,7 +68,7 @@ public class ProdutoDAO {
 			Conexao.executarSQL(preparedStatement, produto.getId());
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw new SQLException(e);
 		} finally {
 			Conexao.fecharConexao(preparedStatement, connection, null);
 		}
@@ -94,7 +94,7 @@ public class ProdutoDAO {
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw new SQLException(e);
 		} finally {
 			Conexao.fecharConexao(preparedStatement, connection, null);
 		}
@@ -122,7 +122,7 @@ public class ProdutoDAO {
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw new SQLException(e);
 		} finally {
 			Conexao.fecharConexao(preparedStatement, connection, null);
 		}
